@@ -2,7 +2,7 @@ from src.db.alchemy import SessionLocal, engine
 from pydantic import BaseModel
 
 ā
-class Message(BaseModel):
+class Message(BaseModel):ā
     status_code: int
     detail: str
 

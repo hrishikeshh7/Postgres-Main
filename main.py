@@ -18,7 +18,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
     expose_headers=["*"]
-)
+)ā
 
 app.include_router(all_routes)
 
