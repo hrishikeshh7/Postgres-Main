@@ -26,7 +26,7 @@ engine = create_engine(settings.DATABASE_URL, connect_args={'connect_timeout': 2
 try:
     Base = automap_base()
     Base.prepare(engine, reflect=True)
-    logger.info("Database connected successfully")āā
+    logger.info("Database connected successfully")
 
     SessionLocal = sessionmaker(autocommit=False, autoflush=False, bind=engine)
 except Exception as err:

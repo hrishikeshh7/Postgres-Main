@@ -18,7 +18,7 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
     expose_headers=["*"]
-)ā
+)
 
 app.include_router(all_routes)
 
@@ -26,5 +26,5 @@ app.include_router(all_routes)
 if __name__ == '__main__':
     logger.info("Started main")
 
-    run("main:app", host="0.0.0.0", port=int(os.getenv("PORT")) if os.getenv("PORT") else 5018,ā reload=True)
+    run("main:app", host="0.0.0.0", port=int(os.getenv("PORT")) if os.getenv("PORT") else 5018, reload=True)
 
