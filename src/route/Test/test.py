@@ -14,7 +14,7 @@ class add(BaseModel):
     id : int
     name: str
 
-print("Test")
+
 @router.post('/create/test', tags=["Test"])
 def add(
         info : add,
