@@ -14,7 +14,7 @@ class add(BaseModel):
     id : int
     name: str
 
-
+print("Test")
 @router.post('/create/test', tags=["Test"])
 def add(
         info : add,
@@ -44,6 +44,7 @@ def test_list(
         db: Session = Depends(get_db)
 
 ):
+
     try:
         res = db.query(table).all()
         return{
