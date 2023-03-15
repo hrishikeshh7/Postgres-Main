@@ -1,7 +1,7 @@
 import psycopg2.extras
 from fastapi import APIRouter, Depends, HTTPException, Query, Body, File, UploadFile, Form, Request
 from sqlalchemy.orm import Session
-from pydantic import BaāāseModel
+from pydantic import BaseModel
 from typing import Optional
 from loguru import logger
 from init import get_raw_db, get_db
