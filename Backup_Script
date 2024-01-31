@@ -1,0 +1,22 @@
+
+1) Take Backup sql file of Single DB using PG Dump Command
+    # sudo docker exec -t '<psql container name>' pg_dump -c -U '<postgres user>' '<database to dump>' > '<dump_file_name>'.sql
+    Example:- sudo docker exec -t 4426e11fcc35 pg_dump -c -U postgres database_name > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+
+2) Copy the File to Other Server where you want to migrate the Database
+
+3) Create a blank database First by the same name
+    # create database '<database to dump>';
+
+4) Import the Database by runnuig the following Command
+    # cat '<dump file>'.sql | sudo docker exec -i '<psql container name>' psql -U postgres -d '<database name>'
+    Example: cat dump.sql | sudo docker exec -i f55ef4f62627 psql -U postgres -d database_name
+
+5)  Get the backup file in your system using scp
+    scp -r docker-compose.yml hrishikesh@192.168.1.195:/home/username
+
+
+
+*********************************
+A)  sudo docker exec -h 192.168.1.190 -t cf696fc0c62d pg_dump -c -U postgres testdb > dump_`date +%d-%m-%Y"_"%H_%M_%S`.sql
+B)  cat dump.sql | sudo docker exec -i f55ef4f62627 psql -U postgres -d database_name
